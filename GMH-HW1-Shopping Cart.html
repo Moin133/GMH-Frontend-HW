@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8" />
+    <title>GetMeHired Bootcamp - Front End (Spring-2020) Homework# 1</title>
+
+    <!--Defining the style of the table and headers-->
+
+    <style>
+        h2 {
+            font-family: 'Trebuchet MS';
+            text-align: center;
+        }
+
+        h4 {
+            font-family: 'Trebuchet MS';
+            text-align: center;
+        }
+
+        table, tr, th, td {
+            table-layout: fixed;
+            width: 60%;
+            border: 1px solid black;
+            font-family: Verdana;
+        }
+
+        tr, td {
+            padding: 10px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>GetMeHired Bootcamp - Front End (Spring-2020) Homework# 1</h2>
+    <h4>Submitted by - Moin</h4>
+    <br />
+
+    <!--The table and elements-->
+
+    <table align="center">
+        <caption style="font-family: Helvetica">
+            <b>Shopping Cart</b>
+        </caption>
+
+        <tr>
+            <th style="width:200px">Item</th>
+            <th style="width:200px">Quantity</th>
+            <th style="width:200px">Unit Price ($)</th>
+            <th style="width:200px">Total Price ($)</th>
+        </tr>
+        <tr>
+            <td>
+                <select>
+                    <option>Apple</option>
+                    <option>Banana</option>
+                    <option>Grapes</option>
+                </select>
+            </td>
+            <td>
+                <input id="qty1" type="number" min="1" />
+            </td>
+            <td>
+                <input id="up1" type="number" min="0.1" />
+            </td>
+            <td>
+                <output id="price1"></output>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select>
+                    <option>Apple</option>
+                    <option>Banana</option>
+                    <option>Grapes</option>
+                </select>
+            </td>
+            <td>
+                <input id="qty2" type="number" min="1" />
+            </td>
+            <td>
+                <input id="up2" type="number" min="0.1" />
+            </td>
+            <td>
+                <output id="price2"></output>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select>
+                    <option>Apple</option>
+                    <option>Banana</option>
+                    <option>Grapes</option>
+                </select>
+            </td>
+            <td>
+                <input id="qty3" type="number" min="1" />
+            </td>
+            <td>
+                <input id="up3" type="number" min="0.1" />
+            </td>
+            <td>
+                <output id="price3"></output>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="right">Sub-total</td>
+            <td><output id="subtotal"></output>
+        </tr>
+        <tr>
+            <td colspan="3" align="right">HST (13%)</td>
+            <td><output id="hst"></output></td>
+        </tr>
+        <tr>
+            <td colspan="3" align="right">
+                <input type="button" value="Click For Total" onclick="Calculate()" />
+            </td>
+            <td><output id="total"></output></td>
+        </tr>
+    </table>
+
+</body>
+
+<!--Function to execute the calculations-->
+
+<script>
+        function Calculate()
+            {
+                var qty1 = document.getElementById('qty1').value;
+                var up1 = document.getElementById('up1').value;
+                var qty2 = document.getElementById('qty2').value;
+                var up2 = document.getElementById('up2').value;
+                var qty3 = document.getElementById('qty3').value;
+                var up3 = document.getElementById('up3').value;
+
+                var p1 = qty1 * up1;
+                var p2 = qty2 * up2;
+                var p3 = qty3 * up3;
+
+                document.getElementById('price1').value = p1;
+                document.getElementById('price2').value = p2;
+                document.getElementById('price3').value = p3;
+
+
+                var st = p1 + p2 + p3;
+                document.getElementById('subtotal').value = st;
+
+                var hst = st * 0.13;
+                document.getElementById('hst').value = hst;
+
+                document.getElementById('total').value = st + hst;
+            }
+
+
+</script>
+
+
+</html>
+
